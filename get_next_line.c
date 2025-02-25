@@ -32,7 +32,7 @@ char	*get_next_line(int fd)
 	line = NULL;
 	if (BUFFER_SIZE <= 0 || fd < 0)
 		return (NULL);
-	buffer = line_malloc(fd, buffer);
+	buffer = malloc_line(fd, buffer);
 	if (!buffer)
 		return (NULL);
 	line = next_line(buffer);
