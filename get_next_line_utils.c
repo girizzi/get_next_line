@@ -12,30 +12,6 @@
 
 #include "get_next_line.h"
 
-char	*malloc_line(int fd, char *str)
-{
-	char	*buff;
-	ssize_t	dim;
-
-	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buff)
-		return (NULL);
-	dim = 1;
-	while (!(ft_strchr(str, '\n')) && dim > 0)
-	{
-		dim = read(fd, buff, BUFFER_SIZE);
-		if (dim == -1)
-		{
-			free(buff);
-			return (NULL);
-		}
-		buff[dim] = '\0';
-		str = ft_strjoin(str, buff);
-	}
-	free(buff);
-	return (str);
-}
-
 char	*ft_strjoin(char *str1, char *str2)
 {
 	char	*p;
@@ -78,6 +54,30 @@ char	*ft_strchr(const char *str, int c)
 		i++;
 	}
 	return (0);
+}
+
+char	*malloc_line(int fd, char *str)
+{
+	char	*buff;
+	ssize_t	dim;
+
+	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buff)
+		return (NULL);
+	dim = 1;
+	while (!(ft_strchr(str, '\n')) && dim > 0)
+	{
+		dim = read(fd, buff, BUFFER_SIZE);
+		if (dim == -1)
+		{
+			free(buff);
+			return (NULL);
+		}
+		buff[dim] = '\0';
+		str = ft_strjoin(str, buff);
+	}
+	free(buff);
+	return (str);
 }
 
 char	*next_line(char *str)
