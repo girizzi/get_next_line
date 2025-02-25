@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-char	*line_malloc(int fd, char *str)
+char	*malloc_line(int fd, char *str)
 {
 	char	*buff;
 	ssize_t	dim;
