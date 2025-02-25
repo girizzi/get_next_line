@@ -27,7 +27,7 @@ char	*malloc_line(int fd, char *str);
 char	*next_line(char *str);
 char	*clean_line(char *line);
 char	*ft_strjoin(char *str1, char *str2);
-char		*ft_strchr(const char *str, int c);
+char	*ft_strchr(const char *str, int c);
 size_t	ft_strlen(const char *str);
 
 #endif
