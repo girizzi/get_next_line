@@ -6,7 +6,7 @@
 /*   By: girizzi <girizzi@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 19:42:54 by girizzi           #+#    #+#             */
-/*   Updated: 2025/02/21 20:54:34 by girizzi          ###   ########.fr       */
+/*   Updated: 2025/03/05 19:29:41 by girizzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 24
+#  define BUFFER_SIZE 42
 # endif
 
 # ifndef MAX_FD
@@ -27,11 +27,11 @@
 # include <fcntl.h>
 
 char	*get_next_line(int fd);
-size_t	ft_strlen(const char *str);
-char	*line_malloc(int fd, char *str);
-char	*next_line(char *str);
+char	*fill_buffer(int fd, char *buffer);
+char	*fill_line(char *str);
 char	*clean_line(char *line);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strjoin(char *str1, char *str2);
+size_t	ft_strlen(const char *str);
 
 #endif
